@@ -1,6 +1,6 @@
 import { HEROES } from './../mock-heroes';
 import { Component, OnInit } from '@angular/core';
-import { Console } from 'console';
+// import { Console } from 'console';
 import { Hero } from '../hero';
 
 @Component({
