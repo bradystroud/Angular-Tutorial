@@ -28,7 +28,8 @@
   background-color: #bbd8dc;
   color: white;
 }
-.heroes .badge {
+/* When i moved this from the parent, i had to remove the .heroes in front of it. Not sure why I didn't have to in the other CSS classes*/
+.badge { 
   display: inline-block;
   font-size: small;
   color: white;

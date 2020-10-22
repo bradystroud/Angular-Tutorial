@@ -1,0 +1,11 @@
+<!-- The *ngIf makes it only show that stuff IF it exists. 
+      so it wont appear till a user selects a hero -->
+<div *ngIf="hero">
+    <h2>{{hero.name}}</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+        <label>name:
+            <input [(ngModel)]="hero.name" placeholder="Hero Name" />
+        </label>
+    </div>
+</div>

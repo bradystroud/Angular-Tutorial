@@ -3,21 +3,13 @@
 <ul class="heroes">
     <!-- The class selected bit changes the class based on a condition. === are weird... -->
     <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+         <!-- <app-hero-list-item [hero]="hero"></app-hero-list-item> This is the part i added that stopped working after adding services. the line below is the original. -->
         <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li>
 </ul>
 
-<!-- The *ngIf makes it only show that stuff IF it exists. 
-      so it wont appear till a user selects a hero -->
-<div *ngIf="selectedHero">
-    <h2>{{selectedHero.name}}</h2>
-    <div><span>id: </span>{{selectedHero.id}}</div>
-    <div>
-        <label>name:
-            <input [(ngModel)]="selectedHero.name" placeholder="Hero Name" />
-        </label>
-    </div>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
 
 
 
