@@ -11,6 +11,8 @@ export class MessageService {
   }
 
   clear() {
-    this.messages = [];
+    if (confirm('Are you sure u wanna clear?')) { //Could this be the issue?
+      this.messages = [];
+    }
   }
 }
