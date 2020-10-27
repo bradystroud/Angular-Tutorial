@@ -1,12 +1,13 @@
-import { HeroService } from '../hero.service'; // This is the service that provides the Hero list *1
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero'; // This is the hero class.
+
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css'],
+  styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[]; // *1 Heroes list (empty here. This is the intialisation Syntax).
@@ -26,20 +27,17 @@ export class HeroesComponent implements OnInit {
   // let Angular call ngOnInit() at an appropriate time after constructing a HeroesComponent instance.
   //
 
-  ngOnInit(): void {
-    console.log('Hello, World?');
+  ngOnInit() {
     this.getHeroes();
-  }
-
-  getHeroes(): void {
-    this.heroService
-      .getHeroes()
-      .subscribe((heroes) => (this.heroes = heroes));
-    // since its asyncrous now, i think the subscribe() waits for the reply
   }
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
     this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  }
+
+  getHeroes(): void {
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes);
   }
 }

@@ -11,8 +11,7 @@ export class MessageService {
   }
 
   clear() {
-    if (confirm('Are you sure u wanna clear?')) { //Could this be the issue?
-      this.messages = [];
-    }
+    //add JS confirm thing
+    this.messages = [];
   }
 }
