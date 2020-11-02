@@ -15,7 +15,7 @@ export class HeroesComponent implements OnInit {
 
 
   // The parameter simultaneously defines a private heroService property and identifies it as a HeroService injection site.
-  constructor(private heroService: HeroService, private messageService: MessageService) {}
+  constructor(private heroService: HeroService, private messageService: MessageService) { }
   // This was a question i just had and then the tutorial answered it.
   // It's like the writer actually took the time to consider what readers might not understan when writing the docs. Crazy.
   //
@@ -33,6 +33,20 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes);
+  }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      });
+  }
+
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
   }
 }

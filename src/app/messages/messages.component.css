@@ -58,3 +58,8 @@ button.clear {
 .item2 {
   padding-top: 23px;
 }
+
+.bottom {
+  position: absolute;
+  bottom: 10px;
+}
