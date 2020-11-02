@@ -1,7 +1,6 @@
 # AngularTourOfHeroes
 
-I am following [this](https://angular.io/tutorial) tutorial to learn angular.
-So far it's going pretty well, I haven't done much JS so TS is very new to me.
+I followed [this](https://angular.io/tutorial) to start learning Angular. It gave me a good outline of the pros and cons Angular, and also the things I need to learn more about.
 
 ![screenshot of application](/screenshots/ss1.png "Screenshot")
 
